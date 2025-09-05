@@ -1,3 +1,4 @@
+//create array of pets
 let pets = [
     {
         name: "Fido",
@@ -26,12 +27,12 @@ let pets = [
 ];
 
 
-
+//add up the number of pets in the pets array and display it
 function calculateTotalPets () {
     let totalPets = pets.length;
     document.getElementById("js-total-pets").innerHTML = totalPets;
 }
-
+//calculates the age of the pet based on the birthday and stores it in each object of the array. I chose to use bdays instead of ages in case this is something that will be stored later since ages change.
 function calculateTotalAge () {
     const today = new Date();
 
@@ -55,6 +56,7 @@ function calculateTotalAge () {
     calculateAverageAges();
 }
 
+//calculate the average age of pets in the table
 function calculateAverageAges () {
     let totalAge = 0;
     pets.forEach(pet => {
@@ -65,7 +67,7 @@ function calculateAverageAges () {
     //diplay average age on webpage
     document.getElementById("js-average-age").innerHTML = `${averageAge} years old`;
 }
-
+//populates the registration table
 function populateRegTable () {
     for (let i = 0; i < pets.length; i++) {
         document.getElementById("js-registration-table").innerHTML += `
@@ -79,10 +81,12 @@ function populateRegTable () {
     }
 }
 
+//clears the registration table to add the ability to add more pets and not get duplicates
 function clearRegTable () {
     document.getElementById("js-registration-table").innerHTML = "";
 }
 
+//testing out adding a pet to the array using push function
 function addPet() {
     pets.push({
         name: "Brant",
@@ -92,7 +96,7 @@ function addPet() {
         type: "human",
         timeIn: "15:00:00"
     });
-
+//recalulate ages and average age, clear the table and repopulate
     calculateTotalPets ();
     calculateTotalAge ();
     clearRegTable ();
