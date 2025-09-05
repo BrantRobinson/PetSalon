@@ -27,12 +27,19 @@ thead {
     background-color: var(--bg-color-nav);
     padding: var(--pd-sm);
     border-radius: var(--br-md) 0 0 var(--br-md);
-    width: 300px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav-container a{
     text-decoration: none;
     color: black;
+}
+
+.no-display {
+    display: none;
 }
 
 .main-container {
@@ -44,11 +51,11 @@ thead {
     display: grid;
     grid-template-areas: 
         'title'    
-        'search'
+        /* 'search' */
         'metric1'  
         'metric2'
         'table';
-    grid-template-rows: 60px 60px 130px 130px;
+    grid-template-rows: 60px 130px 130px;
     gap: var(--pd-md);
     align-items: center;
 }
@@ -75,13 +82,19 @@ thead {
 
 .nav-item {
     width: 90%;
-    display: flex;
     margin: 0 auto;
-    gap: var(--pd-sm);
-    align-items: center;
-    padding: var(--pd-sm);
-
+    display: flex;
 }
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: var(--pd-sm) var(--pd-md);
+}
+
+.logo-co-name p, .nav-link span {
+        display: none;
+    }
 
 .active {
     background-color: #eeeeff;
@@ -163,7 +176,7 @@ thead {
 }
 
 .pet-table th, .pet-table td {
-  padding: var(--pd-sm) var(--pd-md);
+  padding: var(--pd-sm) var(--pd-sm);
   text-align: left;
   border-bottom: 1px groove rgb(220, 220, 220); 
 }
@@ -186,6 +199,29 @@ thead {
         max-width: 1200px;
         padding: 0 2em;
     }
+
+    .logo-co-name p,
+    .nav-bar .nav-link span{
+        display: inline;
+    }
+
+
+    .nav-container {
+        width: 300px;
+        align-items: flex-start;
+    }
+
+    .no-display {
+    display: table-cell;
+    }
+
+    .nav-link {
+        display: flex;
+        gap: var(--pd-md);
+    }
+
+    .pet-table th, .pet-table td {
+        padding: var(--pd-sm) var(--pd-md);
 }
 
 

@@ -20,16 +20,22 @@
         </div>
         <ul class="nav-bar">
             <li class="nav-item">
-                <i class="fa-regular fa-house"></i>
-                <a class="nav-link" href="./index.html">About Us</a>
+                <a class="nav-link" href="./index.html">
+                    <i class="fa-regular fa-house"></i>
+                    <span>About Us</span>
+                </a>
             </li>
             <li class="nav-item">
-                <i class="fa-solid fa-scissors"></i>
-                <a class="nav-link" href="./services.html">Services</a>
+                <a class="nav-link" href="./services.html">
+                    <i class="fa-solid fa-scissors"></i>
+                    <span>Services</span>
+                </a>
             </li>
-            <li class="nav-item active">
-                <i class="fa-regular fa-clipboard"></i>
-                <a class="nav-link" aria-current="page" href="./registration.html">Registration</a>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./registration.html">
+                    <i class="fa-regular fa-clipboard"></i>
+                    <span>Registration</span>
+                </a>
             </li>
         </ul>
     </div>
@@ -40,14 +46,15 @@
             <div id="js-total-pets" class="metric"></div>
         </div>
         <div class="wait-time-container metric-container">
-            <h2>Wait Time</h2>
-            <div id="wait time" class="metric">20 minutes</div>
+            <h2>Average Age</h2>
+            <div id="js-average-age" class="metric"></div>
         </div>
         <table class="pet-table">
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Type</th>
+                    <th class="no-display">Type</th>
+                    <th class="no-display">Age</th>
                     <th>Service</th>
                     <th>Time In</th>
                 </tr>
@@ -62,5 +69,11 @@
     <script src="./scripts/scripts.js"></script>
 
     <script src="https://kit.fontawesome.com/a997a72866.js" crossorigin="anonymous"></script>
+
+    <script>
+        calculateTotalPets ();
+        calculateTotalAge ();
+        populateRegTable ();
+    </script>
 </body>
 </html>
