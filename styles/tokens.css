@@ -1,0 +1,38 @@
+:root {
+    /* font colors */
+    --fc-nav: black;
+    --fc-logo: white;
+
+    /* font sizes */
+    --fs-sm: .5rem;
+    --fs-md: 1.2rem;
+    --fs-lg: 1.5rem;
+    --fs-xl: 2rem;
+
+    /* font weights */
+    --fw-sm: 100;
+    --fw-md: 300;
+    --fw-lg: 500;
+    --fw-xl: 800;
+
+    /* container styles */
+    --shadow-pri: lightgrey;
+
+    --cont-outline: black;
+
+    --br-sm: 10px;
+    --br-md: 20px;
+    --br-lg: 30px;
+
+    --pd-sm: .5em;
+    --pd-md: 1em;
+    --pd-lg: 2em;
+
+    /* colors */
+    --bg-color-pri: #ffe0f5;
+    --bg-color-sec: #e8e4ff;
+    --bg-color-nav: #fff4fa;
+    --bg-color-main: #fffafd;
+
+
+}
