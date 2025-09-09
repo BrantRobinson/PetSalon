@@ -22,6 +22,16 @@ thead {
     font-weight: var(--fw-lg);
 }
 
+.about-us {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pd-md);
+}
+
+.about-us p {
+    margin: 0;
+}
+
 .nav-container {
     margin: 1em 0 1em 1em;
     background-color: var(--bg-color-nav);
@@ -51,13 +61,25 @@ thead {
     display: grid;
     grid-template-areas: 
         'title'    
-        /* 'search' */
+        'button'
         'metric1'  
         'metric2'
         'table';
-    grid-template-rows: 60px 130px 130px;
+    /* grid-template-rows: 60px auto 130px 130px; */
     gap: var(--pd-md);
     align-items: center;
+}
+
+.main-container-home {
+    margin: 1em 1em 1em 0;
+    background-color: var(--bg-color-main);
+    padding: var(--pd-sm);
+    border-radius: 0 var(--br-md) var(--br-md) 0;
+    width: 100%;
+    display: flex;
+    gap: var(--pd-md);
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .page-title {
@@ -189,15 +211,60 @@ thead {
     background-color: #f9f9ff;
 }
 
+.carousel-wrapper {
+    min-width: 250px;
+    max-width: 400px;
+    /* margin: 0 auto; */
+    grid-area: carousel;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 400px;
+}
+
+.carousel-caption {
+    background-color: var(--bg-color-slider);
+    padding: 0 var(--pd-md)
+}
+
+.carousel-inner img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.registration-form {
+    grid-area: register;
+    width: 80%;
+    margin: 0 auto;
+    gap: var(--pd-sm);
+}
+
+.register-button {
+    grid-area: button;
+}
+
+.border {
+    padding: 1rem;
+    background-color: var(--bg-color-sec) !important;
+}
+
 @media (min-width: 800px) {
     .main-container {
         grid-template-areas: 
-        'title    search'
+        'title    button'
         'metric1  metric2'
-        'table    table';
-        grid-template-rows: 60px 130px;
+        'table    table'
+        ;
+        grid-template-rows: 100px 120px auto;
         max-width: 1200px;
         padding: 0 2em;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .main-container-home {
+        max-width: 1200px;
     }
 
     .logo-co-name p,
@@ -222,6 +289,8 @@ thead {
 
     .pet-table th, .pet-table td {
         padding: var(--pd-sm) var(--pd-md);
+    }
+
 }
 
 

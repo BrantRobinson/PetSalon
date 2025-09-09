@@ -25,6 +25,9 @@
 //         timeIn: "14:12:32"
 //     }
 // ];
+
+
+
 //create pets object constructor instead of using the array method above
 class Pet {
   constructor(name, bday, gender, service, type, timeIn) {
@@ -40,21 +43,13 @@ class Pet {
 //add 3 pets using the constructor
 
 let pets = [
-  new Pet("Fido", "2020-09-13", "male", "bath", "dog", "2:30:08 PM"),
-  new Pet("Daisy", "2022-01-22", "female", "nails clipped", "cat", "2:32:22 PM"),
-  new Pet("Tweetie", "2024-09-05", "male", "wings clipped", "bird", "2:48:32 PM")
+  new Pet("Fido", "2020-09-13", "male", "bath", "dog", "2:30 PM"),
+  new Pet("Daisy", "2022-01-22", "female", "nails clipped", "cat", "2:32 PM"),
+  new Pet("Tweetie", "2024-09-05", "male", "wings clipped", "bird", "2:48 PM")
 ];
 
 
-const salon = {
-    name: "Spite Pet Salon",
-    street: "123 Main St.",
-    city: "San Diego",
-    state: "CA",
-    zip: "91942",
-    owner: "Larry David",
-    about: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate ex ipsam nam fugiat deleniti commodi in. Explicabo fugit atque illo quibusdam nesciunt illum, quia, a vero eos id officiis animi!"
-}
+
 
 //add up the number of pets in the pets array and display it
 function calculateTotalPets () {
@@ -119,13 +114,50 @@ function clearRegTable () {
 }
 
 //testing out adding a pet to the array using push function
-function addPet() {
-    let now = new Date();
-    pets.push(new Pet("Brant", "1979-01-26", "male", "brain checked", "human", now.toLocaleTimeString()));
+// function addPet() {
+//     let now = new Date();
+//     pets.push(new Pet("Brant", "1979-01-26", "male", "brain checked", "human", now.toLocaleTimeString()));
 
 //recalulate ages and average age, clear the table and repopulate
+//     calculateTotalPets ();
+//     calculateTotalAge ();
+//     clearRegTable ();
+//     populateRegTable ();
+// }
+
+// get contents of the registration form 
+const registerForm = document.querySelector("form");
+
+//track the click asctions of the form
+function register(event) {
+    event.preventDefault();
+
+    //get form contents
+    const petName = registerForm.elements["petName"].value;
+    const bDay = registerForm.elements["bDay"].value;
+    const gender = registerForm.elements["gender"].value;
+    const type = registerForm.elements["type"].value;
+    const service = registerForm.elements["service"].value;
+
+    console.log(petName);
+    console.log(bDay);
+    console.log(gender);
+    console.log(type);
+    console.log(service);
+
+    const now = new Date();
+    const newPet = new Pet(petName, bDay, gender, service, type, now.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }));
+    pets.push(newPet);
+
     calculateTotalPets ();
     calculateTotalAge ();
     clearRegTable ();
     populateRegTable ();
+
+    const modalEl = document.getElementById("registerModal");
+    const modal = bootstrap.Modal.getInstance(modalEl); // get active modal
+    modal.hide();
+
+    registerForm.reset();
+
 }
