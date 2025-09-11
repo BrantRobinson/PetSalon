@@ -104,6 +104,7 @@ function populateRegTable () {
             <td class="no-display">${pets[i].age}</td>
             <td>${pets[i].service}</td>
             <td>${pets[i].timeIn}</td>
+            <td><button class="btn" onClick="deletePet(${i})"><i class="fa-solid fa-trash"></i></button>
         </tr>`
     }
 }
@@ -160,4 +161,12 @@ function register(event) {
 
     registerForm.reset();
 
+}
+
+function deletePet(i) {
+    pets.splice(i, 1); 
+    calculateTotalPets(); 
+    calculateTotalAge();   
+    clearRegTable();       
+    populateRegTable();    
 }
